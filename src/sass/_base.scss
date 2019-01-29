@@ -1,0 +1,72 @@
+html {
+  background-color: $black-ter;
+}
+
+body {
+  padding: 16px;
+  color: $grey-lighter;
+}
+
+.run-list {
+  margin-bottom: 16px;
+}
+
+.checkbox {
+  position: relative;
+  padding: 8px 8px 8px 32px;
+  color: $grey-light;
+
+  [type="checkbox"] {
+    position: absolute;
+    top: 12px;
+    left: 4px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    color: $grey-light;
+  }
+}
+
+.form-footer {
+  padding: 16px 0;
+}
+
+.title,
+strong { color: $grey-lighter; }
+
+.hide {
+  display: none;
+  margin-bottom: 4px;
+}
+
+.box {
+  margin-top: -4px;
+  background: transparent;
+}
+
+.box-toggle {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: $grey-darker;
+  cursor: pointer;
+
+  span:first-child {
+    flex: 1;
+  }
+
+  & + .box {
+    border-radius: 0;
+    border: 1px solid $grey-darker;
+  }
+
+  .totals {
+    font-size: 14px;
+    i { font-style: normal; }
+  }
+}
+
+.title.box-toggle {
+  margin-bottom: 2px;
+}
