@@ -35,10 +35,6 @@ body {
   }
 }
 
-.form-footer {
-  padding: 16px 0;
-}
-
 .title,
 strong { color: $grey-lighter; }
 
@@ -78,9 +74,16 @@ strong { color: $grey-lighter; }
   margin-bottom: 2px;
 }
 
+#resetbar {
+  margin: 32px 0 0;
+  padding: 32px 0;
+  border-top: 1px solid $red;
+}
+
 .modal-content {
   padding: 32px;
 }
+
 
 .tabs {
   &.is-toggle {

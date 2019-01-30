@@ -9987,10 +9987,6 @@ body {
   color: #b5b5b5;
 }
 
-.form-footer {
-  padding: 16px 0;
-}
-
 .title, .main-title,
 strong {
   color: #dbdbdb;
@@ -10035,6 +10031,12 @@ strong {
 
 .title.box-toggle, .box-toggle.main-title {
   margin-bottom: 2px;
+}
+
+#resetbar {
+  margin: 32px 0 0;
+  padding: 32px 0;
+  border-top: 1px solid #ff3860;
 }
 
 .modal-content {
