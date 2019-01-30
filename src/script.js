@@ -89,7 +89,7 @@ var modal = {
     modal.classList.remove('is-active');
   },
   load: function() {
-    fetch('/modal.html')
+    fetch('modal.html')
       .then(function(res){
         // console.log(res);
         return res.text(); // return text value;
