@@ -105,4 +105,18 @@ strong { color: $grey-lighter; }
   }
 }
 
+.table {
+  max-width: 800px;
+  color: $grey-lighter;
+  background-color: transparent;
 
+  th {
+    color: $grey-lighter;
+  }
+
+  td, th {
+    border-color: $grey-darker;
+  }
+}
+
+.table.is-striped tbody tr:not(.is-selected):nth-child(even) { background-color: rgba($grey-light, 5%); }

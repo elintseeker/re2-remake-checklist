@@ -10055,3 +10055,19 @@ strong {
   background-color: #363636;
   border-color: #4a4a4a;
 }
+
+.table {
+  max-width: 800px;
+  color: #dbdbdb;
+  background-color: transparent;
+}
+.table th {
+  color: #dbdbdb;
+}
+.table td, .table th {
+  border-color: #363636;
+}
+
+.table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+  background-color: rgba(181, 181, 181, 0.05);
+}
