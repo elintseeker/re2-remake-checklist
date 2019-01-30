@@ -1,3 +1,6 @@
+$tabs-boxed-link-hover-background-color: $black-ter;
+$tabs-boxed-link-active-background-color: $black-ter;
+
 html {
   background-color: $black-ter;
 }
@@ -18,9 +21,8 @@ body {
 
   [type="checkbox"] {
     position: absolute;
-    top: 12px;
-    left: 4px;
-    margin-right: 8px;
+    top: 0.70rem;
+    left: 0.5rem;
   }
 
   &:hover {
@@ -69,4 +71,8 @@ strong { color: $grey-lighter; }
 
 .title.box-toggle {
   margin-bottom: 2px;
+}
+
+.modal-content {
+  padding: 32px;
 }
