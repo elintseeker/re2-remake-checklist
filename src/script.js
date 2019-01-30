@@ -173,38 +173,36 @@ for (var x = 0; x < sections.length; x++ ) {
 }
 
 
+var modalEvents = function() {
+  // event listeners to added modal;
+  var delAllDataEl = document.getElementById('resetAllChecklist');
+  delAllDataEl.addEventListener('click', function(){ deleteData('all'); }, false);
+
+  var delChecklistEl = document.getElementById('resetChecklist');
+  delChecklistEl.addEventListener('click', function(){ deleteData(); }, false);
+
+  var confirmBtn = document.getElementById('confirm');
+  confirmBtn.addEventListener('click', confirmDelete, false);
+
+  var closeModalBtn = document.querySelector('.modal-close');
+  closeModalBtn.addEventListener('click', closeModal, false);
+};
+
+
 // load modal html
-var loadModal = function(url) {
-  if (!window.XMLHttpRequest) { return; }
-
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/modal.html', true);
-
-  // Setup callback
-  xhr.onload = function() {
-    // console.log(xhr);
-    if (xhr.status >= 200 && xhr.status < 400) {
-
-      document.getElementById('resetbar').innerHTML = xhr.response;
-
-      // event listeners to added modal;
-      var delAllDataEl = document.getElementById('resetAllChecklist');
-      delAllDataEl.addEventListener('click', function(){ deleteData('all'); }, false);
-
-      var delChecklistEl = document.getElementById('resetChecklist');
-      delChecklistEl.addEventListener('click', function(){ deleteData(); }, false);
-
-      var confirmBtn = document.getElementById('confirm');
-      confirmBtn.addEventListener('click', confirmDelete, false);
-
-      var closeModalBtn = document.querySelector('.modal-close');
-      closeModalBtn.addEventListener('click', closeModal, false);
-    } else {
-      console.log('Error fetching html');
-    }
-  };
-
-  xhr.send();
+var loadModal = function() {
+  fetch('/modal.html')
+    .then(function(res){
+      // console.log(res);
+      return res.text(); // return text value;
+    })
+    .then(function(html){
+      document.getElementById('resetbar').innerHTML = html;
+      modalEvents();
+    })
+    .catch(function(error){
+      console.log('error fetch!');
+    });
 };
 
 document.addEventListener('DOMContentLoaded', loadModal, false);
