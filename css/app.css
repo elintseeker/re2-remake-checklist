@@ -9964,12 +9964,28 @@ body {
   color: #dbdbdb;
 }
 
+p {
+  margin-bottom: 16px;
+}
+
+a,
+a:hover {
+  color: #ff3860;
+}
+
+.red {
+  color: #ff3860;
+}
+
 .main-title a,
 .main-title a:hover {
   color: white;
 }
 
-.run-list {
+section > .title:not(:last-child), section > .main-title:not(:last-child) {
+  margin-bottom: 8px;
+}
+section > ul {
   margin-bottom: 16px;
 }
 
@@ -10009,7 +10025,7 @@ strong {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 8px;
+  padding: 8px 16px;
   background-color: #363636;
   cursor: pointer;
 }

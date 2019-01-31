@@ -35,6 +35,19 @@ var init = function(list) {
     'leon-b': {}
   };
 
+  // wrap elements with checkboxes
+  var listItems = document.querySelectorAll('.box li ');
+  for (var i = 0; i < listItems.length; i++) {
+    var txt = listItems[i].innerText;
+    listItems[i].innerHTML = '<label class="checkbox"><input type="checkbox">' + txt + '</label>';
+  }
+
+  // event listeners
+  var chkBoxEl = document.querySelectorAll('.checkbox input');
+  for ( var p = 0; p < chkBoxEl.length; p++ ) {
+    chkBoxEl[p].addEventListener('click', toggleItem, false);
+  }
+
   if (speedrunList) {
     console.log('speedrun list...');
     // check data
@@ -91,7 +104,6 @@ var modal = {
   load: function() {
     fetch('modal.html')
       .then(function(res){
-        // console.log(res);
         return res.text(); // return text value;
       })
       .then(function(html){
@@ -135,9 +147,6 @@ var modal = {
     // event listeners to added modal;
     var delAllDataEl = document.getElementById('resetAllChecklist');
     delAllDataEl.addEventListener('click', function(){ modal.deleteData('all'); }, false);
-
-    var delChecklistEl = document.getElementById('resetChecklist');
-    delChecklistEl.addEventListener('click', function(){ modal.deleteData(); }, false);
 
     var confirmBtn = document.getElementById('confirm');
     confirmBtn.addEventListener('click', modal.confirmDelete, false);
