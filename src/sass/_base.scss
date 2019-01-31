@@ -7,6 +7,13 @@ body {
   color: $grey-lighter;
 }
 
+p { margin-bottom: 16px; }
+
+a,
+a:hover { color: $red; }
+
+.red { color: $red; }
+
 .main-title {
   @extend .title;
   @extend .is-3;
@@ -15,9 +22,16 @@ body {
   a:hover { color: $white; }
 }
 
-.run-list {
-  margin-bottom: 16px;
+section {
+  & > .title:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  & > ul {
+    margin-bottom: 16px;
+  }
 }
+
 
 .checkbox {
   position: relative;
@@ -51,7 +65,7 @@ strong { color: $grey-lighter; }
 .box-toggle {
   display: flex;
   align-items: center;
-  padding: 8px;
+  padding: 8px 16px;
   background-color: $grey-darker;
   cursor: pointer;
 
@@ -83,7 +97,6 @@ strong { color: $grey-lighter; }
 .modal-content {
   padding: 32px;
 }
-
 
 .tabs {
   &.is-toggle {
