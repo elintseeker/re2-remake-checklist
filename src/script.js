@@ -116,10 +116,11 @@ var modal = {
   },
   deleteData: function(nuke) {
     console.log('Deleting all data...');
+
     var chkboxes = document.querySelectorAll('.checkbox input')
-    for ( var d = 0; d < chkboxes.length; d++ ) {
-      chkboxes[d].checked = false;
-    }
+    chkboxes.forEach(function(boxes){
+      boxes.checked = false;
+    });
 
     runData = {
       'leon-a': {},
@@ -160,14 +161,14 @@ var modal = {
 var total = {
   items: function(){
     var sections = document.querySelectorAll('section');
-    for (var i = 0; i < sections.length; i++) {
-      var thisId = sections[i].getAttribute('id');
+    sections.forEach(function(section){
+      var thisId = section.getAttribute('id');
       var numItems = document.querySelectorAll('#' + thisId + ' input[type="checkbox"]').length;
       var numItemsChecked = document.querySelectorAll('#' + thisId + ' input[type="checkbox"]:checked').length;
 
       document.querySelector('[data-target="' + thisId + '"] .total').innerHTML = numItems;
       total.itemsChecked(thisId);
-    }
+    });
   },
   itemsChecked: function(id) {
     var items = document.querySelectorAll('#' + id + ' input[type="checkbox"]:checked');
@@ -187,14 +188,14 @@ var displaySection = function(e) {
 
 // event listeners
 var chkBoxEl = document.querySelectorAll('.checkbox input');
-for ( var i = 0; i < chkBoxEl.length; i++ ) {
-  chkBoxEl[i].addEventListener('click', toggleItem, false);
-}
+chkBoxEl.forEach(function(checkbox){
+  checkbox.addEventListener('click', toggleItem);
+});
 
 var boxToggle = document.querySelectorAll('.box-toggle');
-for ( var i = 0; i < boxToggle.length; i++ ) {
-  boxToggle[i].addEventListener('click', displaySection, false);
-}
+boxToggle.forEach(function(div){
+  div.addEventListener('click', displaySection);
+});
 
 document.addEventListener('DOMContentLoaded', modal.load, false);
 
