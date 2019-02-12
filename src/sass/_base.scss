@@ -30,13 +30,19 @@ section {
     margin-bottom: 16px;
   }
 
-  li:hover {
-    background-color: rgba($white, 0.1);
+  li {
+    user-select: none;
+
+    &:hover {
+      background-color: rgba($white, 0.1);
+    }
   }
 }
 
 
 .checkbox {
+  display: block;
+  
   position: relative;
   padding: 8px 8px 8px 40px;
   line-height: 24px;

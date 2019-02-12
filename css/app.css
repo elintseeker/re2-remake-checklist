@@ -9985,11 +9985,18 @@ section > .title:not(:last-child), section > .main-title:not(:last-child) {
 section > ul {
   margin-bottom: 16px;
 }
+section li {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 section li:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .checkbox {
+  display: block;
   position: relative;
   padding: 8px 8px 8px 40px;
   line-height: 24px;
