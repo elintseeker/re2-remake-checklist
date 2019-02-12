@@ -10,8 +10,7 @@ body {
 p { margin-bottom: 16px; }
 
 a,
-a:hover { color: $red; }
-
+a:hover,
 .red { color: $red; }
 
 .main-title {
@@ -30,18 +29,33 @@ section {
   & > ul {
     margin-bottom: 16px;
   }
+
+  li:hover {
+    background-color: rgba($white, 0.1);
+  }
 }
 
 
 .checkbox {
   position: relative;
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 40px;
+  line-height: 24px;
   color: $grey-light;
 
   [type="checkbox"] {
     position: absolute;
-    top: 0.70rem;
-    left: 0.5rem;
+    top: 0.80rem;
+    left: 16px;
+  }
+
+  em {
+    color: $red;
+
+    &.boss {
+      font-style: normal;
+      font-weight: 800;
+      color: $orange;
+    }
   }
 
   &:hover {

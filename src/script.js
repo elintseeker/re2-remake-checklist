@@ -35,19 +35,9 @@ var init = function(list) {
     'leon-b': {}
   };
 
-  // wrap elements with checkboxes
-  var listItems = document.querySelectorAll('.box li ');
-  for (var i = 0; i < listItems.length; i++) {
-    var txt = listItems[i].innerText;
-    listItems[i].innerHTML = '<label class="checkbox"><input type="checkbox">' + txt + '</label>';
-  }
+  items.wrap();
 
-  // event listeners
-  var chkBoxEl = document.querySelectorAll('.checkbox input');
-  for ( var p = 0; p < chkBoxEl.length; p++ ) {
-    chkBoxEl[p].addEventListener('click', toggleItem, false);
-  }
-
+  // check and restore data
   if (speedrunList) {
     console.log('speedrun list...');
     // check data
@@ -63,32 +53,21 @@ var init = function(list) {
   }
 
   total.items();
-};
+
+  // event listeners
+  var chkBoxEl = document.querySelectorAll('.checkbox input');
+  chkBoxEl.forEach(function(checkbox){
+    checkbox.addEventListener('click', items.toggleCheck);
+  });
+  
+  var boxToggle = document.querySelectorAll('.box-toggle');
+  boxToggle.forEach(function(div){
+    div.addEventListener('click', items.displaySection);
+  });
+  
+  document.addEventListener('DOMContentLoaded', modal.load, false);
 
 
-
-
-var toggleItem = function(e) {
-  var parentEl = this.parentNode.parentNode;
-  var sectionId = parentEl.parentNode.parentNode.getAttribute('id');
-  var dataId = parentEl.getAttribute('data-id');
-
-  if (this.checked) {
-    console.log('Added', dataId);
-    runData[sectionId][dataId] = true;
-  } else {
-    console.log('Removed', dataId);
-    delete runData[sectionId][dataId];
-  }
-
-  // save to localStorage
-  if (speedrunList) {
-    localStorage.setItem('re2SpeedrunData', JSON.stringify(runData));
-  } else {
-    localStorage.setItem('re2StandardData', JSON.stringify(runData));
-  }
-
-  total.itemsChecked(sectionId);
 };
 
 
@@ -178,26 +157,44 @@ var total = {
 };
 
 
-var displaySection = function(e) {
-  var elTarget = this.getAttribute('data-target');
-  var tgt = document.getElementById(elTarget);
-  tgt.classList.toggle('hide');
-};
+var items = {
+  displaySection : function(e) {
+    var elTarget = this.getAttribute('data-target');
+    var tgt = document.getElementById(elTarget);
+    tgt.classList.toggle('hide');
+  },
+  wrap: function() {
+    // wrap elements with checkboxes
+    var listItems = document.querySelectorAll('.box li ');
+    listItems.forEach(function(item){
+      var txt = item.innerHTML;
+      item.innerHTML = '<label class="checkbox"><input type="checkbox">' + txt + '</label>';
+    });
+  },
+  toggleCheck : function(e) {
+    var parentEl = this.parentNode.parentNode;
+    var sectionId = parentEl.parentNode.parentNode.getAttribute('id');
+    var dataId = parentEl.getAttribute('data-id');
+  
+    if (this.checked) {
+      console.log('Added', dataId);
+      runData[sectionId][dataId] = true;
+    } else {
+      console.log('Removed', dataId);
+      delete runData[sectionId][dataId];
+    }
+  
+    // save to localStorage
+    if (speedrunList) {
+      localStorage.setItem('re2SpeedrunData', JSON.stringify(runData));
+    } else {
+      localStorage.setItem('re2StandardData', JSON.stringify(runData));
+    }
+  
+    total.itemsChecked(sectionId);
+  }
+}
 
-
-
-// event listeners
-var chkBoxEl = document.querySelectorAll('.checkbox input');
-chkBoxEl.forEach(function(checkbox){
-  checkbox.addEventListener('click', toggleItem);
-});
-
-var boxToggle = document.querySelectorAll('.box-toggle');
-boxToggle.forEach(function(div){
-  div.addEventListener('click', displaySection);
-});
-
-document.addEventListener('DOMContentLoaded', modal.load, false);
 
 // initialize
 init();

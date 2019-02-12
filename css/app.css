@@ -9969,10 +9969,7 @@ p {
 }
 
 a,
-a:hover {
-  color: #ff3860;
-}
-
+a:hover,
 .red {
   color: #ff3860;
 }
@@ -9988,16 +9985,28 @@ section > .title:not(:last-child), section > .main-title:not(:last-child) {
 section > ul {
   margin-bottom: 16px;
 }
+section li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 .checkbox {
   position: relative;
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 40px;
+  line-height: 24px;
   color: #b5b5b5;
 }
 .checkbox [type=checkbox] {
   position: absolute;
-  top: 0.7rem;
-  left: 0.5rem;
+  top: 0.8rem;
+  left: 16px;
+}
+.checkbox em {
+  color: #ff3860;
+}
+.checkbox em.boss {
+  font-style: normal;
+  font-weight: 800;
+  color: #ff470f;
 }
 .checkbox:hover {
   color: #b5b5b5;
