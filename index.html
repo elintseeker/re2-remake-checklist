@@ -6,11 +6,22 @@
   <title>Resident Evil 2 Remake - Guide / Checklist</title>
   <meta name="description" content="A Resident Evil 2 Guide and Checklist (2019/Remake by Capcom)">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#333">
   <link rel="stylesheet" href="css/app.min.css" type="text/css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('sw.js')
+        .then(function(){
+          console.log('ServiceWorker registered...')
+        });
+    };
+  </script>
   <meta name="google-site-verification" content="1U9mYRfbjGk1-UIAfCK8D1IVtQ6-z0SinJbLKrPB-no" />
 </head>
 <body>
-    <div class="container">
+  <div class="container">
     <h1 class="main-title">
       <a href="index.html">
         RESIDENT EVIL <span class="red">2</span> Remake Guide / Checklist
@@ -39,7 +50,7 @@
 
 
     <div class="container">
-      <p><strong>Notes:</strong> <strong>This is the bare minimum checklist and guide for Resident Evil 2</strong> and the steps outlined below is from a speedrun. Take what you need along the way or go back to areas when you need to or if you forgot something. When pausing the game, <strong>open the options screen instead</strong>. Not the map or the inventory, so that the in-game timer actually stops. Lastly, when reloading a game, exit to the title and load your save/autosave from there.</p>
+      <p><strong>Note:</strong> <strong>This is the bare minimum checklist and guide for Resident Evil 2</strong> and the steps outlined below is from a speedrun. Take what you need along the way or go back to areas when you need to or if you forgot something.</p>
     </div>
 
 
@@ -132,40 +143,6 @@
           <li data-id="leon-a-lab12">Exit the platform thru the door.</li>
         </ul>
       </section>
-
-      <h2 class="title is-4 box-toggle" data-target="claire-b">
-        <span>Claire B Checklist</span>
-        <span class="totals"><i class="currtotal"></i> / <i class="total"></i></span>
-      </h2>
-
-      <section class="box" id="claire-b">
-        <ul class="run-list">
-          <li data-id="claire-b-0">
-            <label class="checkbox">
-              <input type="checkbox">
-              To <strong>Fire Escape:</strong> Pick up <strong>Bolt Cutters</strong> from the wheel barrow. Then proceed to back to <strong>Guard Room</strong>
-            </label>
-          </li>
-          <li data-id="claire-b-1">
-            <label class="checkbox">
-              <input type="checkbox">
-              <strong>Guard Room:</strong> Pick up everything and go back to the <strong>Fire Escape</strong>. Use key and enter.
-            </label>
-          </li>
-        </ul>
-      </section>
-
-      <h2 class="title is-4 box-toggle" data-target="claire-a">
-        <span>Claire A Checklist</span>
-        <span class="totals"><i class="currtotal"></i> / <i class="total"></i></span>
-      </h2>
-      <section class="box" id="claire-a">Nothing here</section>
-
-      <h2 class="title is-4 box-toggle" data-target="leon-b">
-        <span>Leon B Checklist</span>
-        <span class="totals"><i class="currtotal"></i> / <i class="total"></i></span>
-      </h2>
-      <section class="box" id="leon-b">Nothing here</section>
     </div>
 
     <div id="resetbar"></div>

@@ -42,7 +42,7 @@ section {
 
 .checkbox {
   display: block;
-  
+
   position: relative;
   padding: 8px 8px 8px 40px;
   line-height: 24px;
@@ -140,7 +140,7 @@ strong { color: $grey-lighter; }
 
 .table {
   margin: 0 auto 32px;
-  max-width: 960px;
+  table-layout: fixed;
   color: $grey-lighter;
   background-color: transparent;
 

@@ -10090,7 +10090,7 @@ strong {
 
 .table {
   margin: 0 auto 32px;
-  max-width: 960px;
+  table-layout: fixed;
   color: #dbdbdb;
   background-color: transparent;
 }
