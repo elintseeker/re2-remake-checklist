@@ -9971,7 +9971,7 @@ p {
 a,
 a:hover,
 .red {
-  color: #ff3860;
+  color: #db002c;
 }
 
 .main-title a,
@@ -10008,7 +10008,7 @@ section li:hover {
   left: 16px;
 }
 .checkbox em {
-  color: #ff3860;
+  color: #db002c;
 }
 .checkbox em.boss {
   font-style: normal;
@@ -10068,7 +10068,7 @@ strong {
 #resetbar {
   margin: 32px 0 0;
   padding: 32px 0;
-  border-top: 1px solid #ff3860;
+  border-top: 1px solid #db002c;
 }
 
 .modal-content {
