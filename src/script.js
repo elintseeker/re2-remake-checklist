@@ -1,5 +1,4 @@
 (function(){
-
 'use Strict';
 
 var standardList = document.getElementById('standard');
@@ -66,8 +65,6 @@ var init = function(list) {
   });
   
   document.addEventListener('DOMContentLoaded', modal.load, false);
-
-
 };
 
 

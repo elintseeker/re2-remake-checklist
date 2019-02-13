@@ -1,12 +1,12 @@
 {
   "name": "Resident Evil 2 Checklist/Guide",
   "short_name": "RE2Checklist",
-  "start_url": "/index.html",
+  "start_url": "/re2-remake-checklist/index.html",
   "display": "standalone",
   "theme_color": "#333",
   "background_color":"#333",
   "icons": [{
-      "src": "/assets/icon-512.png",
+      "src": "/re2-remake-checklist/assets/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }]
