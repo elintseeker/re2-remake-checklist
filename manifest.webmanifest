@@ -1,6 +1,6 @@
 {
-  "name": "Resident Evil 2 Checklist/Guide",
-  "short_name": "RE2Checklist",
+  "name": "Resident Evil 2 Checklist",
+  "short_name": "RE2 Checklist",
   "start_url": "/re2-remake-checklist/index.html",
   "display": "standalone",
   "theme_color": "#333",
