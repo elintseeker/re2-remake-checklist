@@ -1,4 +1,4 @@
-$red: darken($red, 18%);
+// $red: darken($red, 18%);
 
 html {
   background-color: $black-ter;
@@ -30,13 +30,17 @@ section {
 
   & > ul {
     margin-bottom: 16px;
-  }
 
-  li {
-    user-select: none;
-
-    &:hover {
-      background-color: rgba($white, 0.1);
+    li {
+      position: relative;
+      padding: 8px 0;
+      line-height: 28px;
+      color: $grey-light;
+      user-select: none;
+      
+      &:hover {
+        background-color: rgba($white, 0.1);
+      }
     }
   }
 }
@@ -44,16 +48,17 @@ section {
 
 .checkbox {
   display: block;
-
   position: relative;
-  padding: 8px 8px 8px 40px;
-  line-height: 24px;
-  color: $grey-light;
+  padding-left: 32px;
+
+  &:hover {
+    color: currentColor;
+  }
 
   [type="checkbox"] {
     position: absolute;
-    top: 0.80rem;
-    left: 16px;
+    top: 4px;
+    left: 8px;
   }
 
   em {
@@ -65,10 +70,6 @@ section {
       color: $orange;
     }
   }
-
-  &:hover {
-    color: $grey-light;
-  }
 }
 
 .title,
@@ -77,11 +78,6 @@ strong { color: $grey-lighter; }
 .hide {
   display: none;
   margin-bottom: 4px;
-}
-
-.box {
-  margin-top: -4px;
-  background: transparent;
 }
 
 .box-toggle {
@@ -96,6 +92,9 @@ strong { color: $grey-lighter; }
   }
 
   & + .box {
+    margin-top: -4px;
+    padding: 16px;
+    background: transparent;
     border-radius: 0;
     border: 1px solid $grey-darker;
   }
@@ -113,7 +112,6 @@ strong { color: $grey-lighter; }
 #resetbar {
   margin: 32px 0 0;
   padding: 32px 0;
-  border-top: 1px solid $red;
 }
 
 .modal-content {
@@ -142,7 +140,7 @@ strong { color: $grey-lighter; }
 
 .table {
   margin: 0 auto 32px;
-  table-layout: fixed;
+  // table-layout: fixed;
   color: $grey-lighter;
   background-color: transparent;
 

@@ -9971,7 +9971,7 @@ p {
 a,
 a:hover,
 .red {
-  color: #db002c;
+  color: #ff3860;
 }
 
 .main-title a,
@@ -9985,38 +9985,40 @@ section > .title:not(:last-child), section > .main-title:not(:last-child) {
 section > ul {
   margin-bottom: 16px;
 }
-section li {
+section > ul li {
+  position: relative;
+  padding: 8px 0;
+  line-height: 28px;
+  color: #b5b5b5;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-section li:hover {
+section > ul li:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .checkbox {
   display: block;
   position: relative;
-  padding: 8px 8px 8px 40px;
-  line-height: 24px;
-  color: #b5b5b5;
+  padding-left: 32px;
+}
+.checkbox:hover {
+  color: currentColor;
 }
 .checkbox [type=checkbox] {
   position: absolute;
-  top: 0.8rem;
-  left: 16px;
+  top: 4px;
+  left: 8px;
 }
 .checkbox em {
-  color: #db002c;
+  color: #ff3860;
 }
 .checkbox em.boss {
   font-style: normal;
   font-weight: 800;
   color: #ff470f;
-}
-.checkbox:hover {
-  color: #b5b5b5;
 }
 
 .title, .main-title,
@@ -10027,11 +10029,6 @@ strong {
 .hide {
   display: none;
   margin-bottom: 4px;
-}
-
-.box {
-  margin-top: -4px;
-  background: transparent;
 }
 
 .box-toggle {
@@ -10051,6 +10048,9 @@ strong {
           flex: 1;
 }
 .box-toggle + .box {
+  margin-top: -4px;
+  padding: 16px;
+  background: transparent;
   border-radius: 0;
   border: 1px solid #363636;
 }
@@ -10068,7 +10068,6 @@ strong {
 #resetbar {
   margin: 32px 0 0;
   padding: 32px 0;
-  border-top: 1px solid #db002c;
 }
 
 .modal-content {
@@ -10090,7 +10089,6 @@ strong {
 
 .table {
   margin: 0 auto 32px;
-  table-layout: fixed;
   color: #dbdbdb;
   background-color: transparent;
 }

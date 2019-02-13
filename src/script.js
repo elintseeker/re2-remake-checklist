@@ -63,8 +63,6 @@ var init = function(list) {
   boxToggle.forEach(function(div){
     div.addEventListener('click', items.displaySection);
   });
-  
-  document.addEventListener('DOMContentLoaded', modal.load, false);
 };
 
 
@@ -196,4 +194,5 @@ var items = {
 // initialize
 init();
 
+document.addEventListener('DOMContentLoaded', modal.load, false);
 })();
