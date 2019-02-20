@@ -1,7 +1,7 @@
 (function(){
 'use Strict';
 
-var standardList = document.getElementById('standard');
+// var standardList = document.getElementById('standard');
 var speedrunList = document.getElementById('speedrun');
 var hasStandardData = localStorage.getItem('re2StandardData');
 var hasSpeedrunData = localStorage.getItem('re2SpeedrunData');
@@ -37,16 +37,16 @@ var init = function(list) {
   items.wrap();
 
   // check and restore data
-  if (speedrunList) {
-    console.log('speedrun list...');
-    // check data
-    if (hasSpeedrunData) {
-      restoreData();
-    }
-  } else {
+  if (list) {
     console.log('standard run list...');
     // check data
     if (hasStandardData) {
+      restoreData();
+    }
+  } else {
+    console.log('speedrun list...');
+    // check data
+    if (hasSpeedrunData) {
       restoreData();
     }
   }
@@ -67,11 +67,11 @@ var init = function(list) {
 
 
 var modal = {
-  confirmDelete: function(e) {
+  confirmDelete: function() {
     var modal = document.querySelector('.modal');
     modal.classList.add('is-active');
   },
-  close: function(e) {
+  close: function() {
     var modal = document.querySelector('.modal');
     modal.classList.remove('is-active');
   },
@@ -86,6 +86,7 @@ var modal = {
       })
       .catch(function(error){
         console.log('error fetch!');
+        console.log(error);
       });
   },
   deleteData: function(nuke) {
@@ -138,7 +139,7 @@ var total = {
     sections.forEach(function(section){
       var thisId = section.getAttribute('id');
       var numItems = document.querySelectorAll('#' + thisId + ' input[type="checkbox"]').length;
-      var numItemsChecked = document.querySelectorAll('#' + thisId + ' input[type="checkbox"]:checked').length;
+      // var numItemsChecked = document.querySelectorAll('#' + thisId + ' input[type="checkbox"]:checked').length;
 
       document.querySelector('[data-target="' + thisId + '"] .total').innerHTML = numItems;
       total.itemsChecked(thisId);
@@ -153,7 +154,7 @@ var total = {
 
 
 var items = {
-  displaySection : function(e) {
+  displaySection : function() {
     var elTarget = this.getAttribute('data-target');
     var tgt = document.getElementById(elTarget);
     tgt.classList.toggle('hide');
@@ -166,7 +167,7 @@ var items = {
       item.innerHTML = '<label class="checkbox"><input type="checkbox">' + txt + '</label>';
     });
   },
-  toggleCheck : function(e) {
+  toggleCheck : function() {
     var parentEl = this.parentNode.parentNode;
     var sectionId = parentEl.parentNode.parentNode.getAttribute('id');
     var dataId = parentEl.getAttribute('data-id');
