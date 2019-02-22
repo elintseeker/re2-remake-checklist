@@ -110,8 +110,8 @@ strong { color: $grey-lighter; }
 }
 
 #resetbar {
-  margin: 32px 0 0;
   padding: 32px 0;
+  text-align: center;
 }
 
 .modal-content {
@@ -162,4 +162,10 @@ strong { color: $grey-lighter; }
 .table.is-striped tbody tr:not(.is-selected):nth-child(odd).head {
   font-size: 1.2rem;
   background-color: rgba($red, 0.2);
+}
+
+
+footer {
+  padding: 32px;
+  text-align: center;
 }
