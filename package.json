@@ -1,21 +1,30 @@
 {
-  "name": "Project",
+  "name": "RE2ChecklistGuide ",
   "version": "0.0.1",
-  "main": "index.js",
   "author": "none",
   "license": "None",
   "private": true,
   "devDependencies": {
     "autoprefixer": "^9.4.7",
-    "grunt": "^1.0.2",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-uglify": "^4.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-dart-sass": "^1.1.3",
-    "grunt-postcss": "^0.9.0"
-  },
-  "dependencies": {
     "bulma": "^0.7.2",
-    "eslint": "^5.14.1"
+    "clean-css-cli": "^4.2.1",
+    "eslint": "^5.14.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.1",
+    "uglify-js": "^3.4.9"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "npm run css && npm run js-minify",
+    "css": "npm run css-compile && npm run css-prefix && npm run css-minify",
+    "css-compile": "node-sass --source-map true --source-map-contents true --output-style expanded --precision 6 src/scss/app.scss assets/app.css",
+    "css-prefix": "postcss assets/app.css --replace --use autoprefixer",
+    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output assets/app.min.css assets/app.css",
+    "js-minify": "uglifyjs src/app.js --compress --mangle --output assets/app.min.js",
+    "watch": "npm-run-all --parallel watch-*",
+    "watch-css": "nodemon --watch src/scss/ --ext scss --exec \"npm run css\"",
+    "watch-js": "nodemon --watch src/ --ext js --exec \"npm run js-minify\""
   }
 }

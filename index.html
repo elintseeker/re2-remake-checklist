@@ -7,17 +7,18 @@
   <meta name="description" content="A Resident Evil 2 Guide and Checklist (2019/Remake by Capcom)">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#333">
-  <link rel="icon" type="image/png" href="assets/icon-512.png" />
-  <link rel="stylesheet" href="css/app.min.css" type="text/css">
-  <link rel="manifest" href="/re2-remake-checklist/manifest.webmanifest">
+  <link rel="icon" type="image/png" href="./assets/icon-512.png" />
+  <link rel="stylesheet" href="./assets/app.min.css" type="text/css">
+  <link rel="manifest" href="./manifest.webmanifest">
   <script>
     if ('serviceWorker' in navigator) {
+      console.log('PWA?');
       navigator.serviceWorker
-        .register('/re2-remake-checklist/sw.js')
+        .register('sw.js')
         .then(function(){
-          console.log('ServiceWorker registered...')
+          console.log('ServiceWorker registered...');
         });
-    };
+    }
   </script>
   <meta name="google-site-verification" content="1U9mYRfbjGk1-UIAfCK8D1IVtQ6-z0SinJbLKrPB-no" />
 </head>
@@ -147,6 +148,6 @@
     <div id="resetbar"></div>
   </div>
 
-  <script src="js/script.min.js"></script>
+  <script src="assets/app.min.js"></script>
 </body>
 </html>

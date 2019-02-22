@@ -58,7 +58,7 @@ var init = function(list) {
   chkBoxEl.forEach(function(checkbox){
     checkbox.addEventListener('click', items.toggleCheck);
   });
-  
+
   var boxToggle = document.querySelectorAll('.box-toggle');
   boxToggle.forEach(function(div){
     div.addEventListener('click', items.displaySection);
@@ -171,7 +171,7 @@ var items = {
     var parentEl = this.parentNode.parentNode;
     var sectionId = parentEl.parentNode.parentNode.getAttribute('id');
     var dataId = parentEl.getAttribute('data-id');
-  
+
     if (this.checked) {
       console.log('Added', dataId);
       runData[sectionId][dataId] = true;
@@ -179,14 +179,14 @@ var items = {
       console.log('Removed', dataId);
       delete runData[sectionId][dataId];
     }
-  
+
     // save to localStorage
     if (speedrunList) {
       localStorage.setItem('re2SpeedrunData', JSON.stringify(runData));
     } else {
       localStorage.setItem('re2StandardData', JSON.stringify(runData));
     }
-  
+
     total.itemsChecked(sectionId);
   }
 }

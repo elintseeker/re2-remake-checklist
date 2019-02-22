@@ -37,7 +37,7 @@ section {
       line-height: 28px;
       color: $grey-light;
       user-select: none;
-      
+
       &:hover {
         background-color: rgba($white, 0.1);
       }
@@ -139,7 +139,7 @@ strong { color: $grey-lighter; }
 }
 
 .table {
-  margin: 0 auto 32px;
+  margin: 0 auto;
   // table-layout: fixed;
   color: $grey-lighter;
   background-color: transparent;
@@ -153,4 +153,13 @@ strong { color: $grey-lighter; }
   }
 }
 
-.table.is-striped tbody tr:not(.is-selected):nth-child(even) { background-color: rgba($grey-light, 5%); }
+
+.table:not(:last-child),
+.table { margin-bottom: 40px; }
+
+.table.is-striped tbody tr:not(.is-selected):nth-child(even) { background-color: transparent; }
+.table.is-striped tbody tr:not(.is-selected):nth-child(odd) { background-color: rgba($grey-dark, 0.3); }
+.table.is-striped tbody tr:not(.is-selected):nth-child(odd).head {
+  font-size: 1.2rem;
+  background-color: rgba($red, 0.2);
+}
